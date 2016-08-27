@@ -1,11 +1,13 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
-  # Visitors can browse articles and add comments
-  http_basic_authenticate_with name: "djch", password: "secret", except: [:index, :show]
+  # Visitors can browse articles and add comments, every else is protected
+  http_basic_authenticate_with name: "djch",
+                               password: "secret",
+                               except: [:index, :show]
 
   def index
-    @articles = Article.all
+    @articles = Article.all.order(created_at: :desc)
   end
 
   def show
