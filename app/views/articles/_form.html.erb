@@ -1,0 +1,30 @@
+<%= form_for @article do |f| %>
+
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h3>
+        <%= pluralize(@article.errors.count, "error") %>
+        prohibited this article from being saved:
+      </h3>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h1>
+    <%= f.label :title, class: "dn" %>
+    <%= f.text_field :title, class: "db pa2 ba b--light-silver br2" %>
+  </h1>
+  <p>
+    <%= f.label :text, class: "dn" %>
+    <%= f.hidden_field :text %>
+    <trix-editor input="article_text"></trix-editor>
+  </p>
+  <p>
+    <%= f.submit 'Publish this article' %>
+  </p>
+
+<% end %>

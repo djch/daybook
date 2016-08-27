@@ -1,0 +1,12 @@
+<header class="mv4 tc">
+  <h1>Happy <%= Date.today.strftime('%A') %>!</h1>
+  <h2>😊</h2>
+  <h3>Welcome to Dan's Rad Rails R-website</h3>
+</header>
+
+<nav>
+  On the menu:
+  <ul>
+    <li><%= link_to 'My Blog', controller: 'articles' %></li>
+  </ul>
+</nav>

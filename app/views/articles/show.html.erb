@@ -1,0 +1,26 @@
+<header class="mv4 tc">
+  <p><%= link_to '← Read a different article', articles_path %></p>
+  <p>
+    <%= link_to 'Edit this article', edit_article_path(@article) %> |
+    <%= link_to 'Delete this article', article_path(@article),
+            remote: true,
+            method: :delete,
+            data: { confirm: 'Definitely delete this article?' } %>
+  </p>
+
+  <h1 class="mt4 mb3"><%= @article.title %></h1>
+  <div class="gray">
+    Published on <%= @article.created_at.to_date.to_s(:long_ordinal) %>
+  </div>
+</header>
+
+<div class="trix-content"><%= @article.text.html_safe %></div>
+
+<hr class="mv4">
+<h2><%= @article.comments.count %> comments</h2>
+<div id="thread">
+  <%= render @article.comments %>
+</div>
+<div>
+  <%= render 'comments/form' %>
+</div>

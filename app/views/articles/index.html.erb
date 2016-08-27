@@ -1,0 +1,18 @@
+<header class="mv4 tc">
+  <%= link_to '← Back to home', controller: 'welcome' %>
+  <h1>Articles</h1>
+  <strong><%= link_to 'Post an article', new_article_path %></strong>
+</header>
+
+<% @articles.each do |article| %>
+  <h2 class="mb2"><%= article.title %></h2>
+  <div class="gray">
+    Published on <%= article.created_at.to_date.to_s(:long_ordinal) %>
+  </div>
+  <p class="trix-content">
+    <%= truncate(article.text, length: 1024, separator: '. ', escape: false)%>
+  </p>
+  <div class="mb4">
+    <%= link_to 'Continued…', article_path(article), class: "i" %>
+  </div>
+<% end %>
