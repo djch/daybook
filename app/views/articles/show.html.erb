@@ -1,7 +1,7 @@
 <header class="mv4 tc">
   <p><%= link_to '← Read a different article', articles_path %></p>
   <p>
-    <%= link_to 'Edit this article', edit_article_path(@article) %> |
+    <%= link_to 'Edit this article', edit_article_path(@article) %> •
     <%= link_to 'Delete this article', article_path(@article),
             remote: true,
             method: :delete,

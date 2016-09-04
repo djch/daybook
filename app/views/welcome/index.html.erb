@@ -1,12 +1,10 @@
 <header class="mv4 tc">
-  <h1>Happy <%= Date.today.strftime('%A') %>!</h1>
-  <h2>😊</h2>
-  <h3>Welcome to Dan's Rad Rails R-website</h3>
+  <a class="link dim black b f1 f-headline-ns tc db mb3 mb4-ns" href="/" title="Home">Day Book</a>
 </header>
 
-<nav>
-  On the menu:
-  <ul>
-    <li><%= link_to 'My Blog', controller: 'articles' %></li>
-  </ul>
+<nav class="tc">
+  There's only one thing to do here:
+  <%= link_to 'read some articles →', controller: 'articles' %>
 </nav>
+
+<h2 class="mt5 tc gray">😊 Happy <%= Date.today.strftime('%A') %>!</h2>
