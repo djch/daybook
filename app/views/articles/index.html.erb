@@ -7,7 +7,7 @@
 <% @articles.each do |article| %>
   <h2 class="mb2"><%= article.title %></h2>
   <div class="gray">
-    Published on <%= article.created_at.to_date.to_s(:long_ordinal) %>
+    Published on <%= local_date(article.created_at) %>
   </div>
   <p class="trix-content">
     <%= truncate(article.text, length: 1024, separator: '. ', escape: false)%>

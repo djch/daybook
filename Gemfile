@@ -45,3 +45,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Rails engine for cache-friendly, client-side local time
+# TODO: Check if this pre-release version of locak_time is merged yet
+gem "local_time", github: "basecamp/local_time", branch: "2-0"

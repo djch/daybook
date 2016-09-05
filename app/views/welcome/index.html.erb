@@ -7,4 +7,4 @@
   <%= link_to 'read some articles →', controller: 'articles' %>
 </nav>
 
-<h2 class="mt5 tc gray">😊 Happy <%= Date.today.strftime('%A') %>!</h2>
+<h2 class="mt5 tc gray">😊 Happy <%= local_time(Date.today, '%A') %>!</h2>

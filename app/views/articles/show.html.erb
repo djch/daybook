@@ -10,7 +10,7 @@
 
   <h1 class="mt4 mb3"><%= @article.title %></h1>
   <div class="gray">
-    Published on <%= @article.created_at.to_date.to_s(:long_ordinal) %>
+    Published on <%= local_date(@article.created_at) %>
   </div>
 </header>
 

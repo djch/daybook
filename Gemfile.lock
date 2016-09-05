@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/basecamp/local_time.git
+  revision: 7cf181e6b066d94557ca065773ddc9890f0ca2b0
+  branch: 2-0
+  specs:
+    local_time (1.0.4)
+      coffee-rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -161,6 +169,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  local_time!
   pg (~> 0.18.4)
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
