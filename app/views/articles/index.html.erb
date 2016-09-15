@@ -10,7 +10,7 @@
     Published on <%= local_date(article.created_at) %>
   </div>
   <p class="trix-content">
-    <%= truncate(article.text, length: 1024, separator: '. ', escape: false)%>
+    <%= truncate(article.text, length: 960, separator: '. ', escape: false)%>
   </p>
   <div class="mb4">
     <%= link_to 'Continued…', article_path(article), class: "i" %>

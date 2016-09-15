@@ -1,0 +1,5 @@
+// Collect the SCSS partials into one file which gets loaded into the manifest
+// See: http://guides.rubyonrails.org/asset_pipeline.html#manifest-files-and-directives
+// -----------------------------------------------------------------------------
+@import "_variables.scss";
+@import "_trix.scss";
