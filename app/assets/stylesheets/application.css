@@ -11,7 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_self
- *= require tachyons.min
+ *= require tachyons
  *= require trix
  *= require daybook
 */
