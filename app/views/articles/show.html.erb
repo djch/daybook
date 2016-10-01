@@ -17,7 +17,7 @@
 <div class="trix-content"><%= @article.text.html_safe %></div>
 
 <hr class="mv4">
-<h2><%= @article.comments.count %> comments</h2>
+<h2><%= pluralize(@article.comments.count, 'comment') %></h2>
 <div id="thread">
   <%= render @article.comments %>
 </div>
