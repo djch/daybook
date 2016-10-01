@@ -1,0 +1,20 @@
+body {
+  font-family: $system-font-family;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  text-rendering: optimizeLegibility;
+}
+
+// Typography
+p { margin-bottom: 0.5rem; }
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: $line-height-headings;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1rem; }
+h5 { font-size: 0.75rem; }
+h6 { font-size: 0.5rem; }
