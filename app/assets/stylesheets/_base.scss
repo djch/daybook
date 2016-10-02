@@ -6,7 +6,10 @@ body {
 }
 
 // Typography
-p { margin-bottom: 0.5rem; }
+p {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
 
 h1, h2, h3, h4, h5, h6 {
   line-height: $line-height-headings;
@@ -18,3 +21,14 @@ h3 { font-size: 1.25rem; }
 h4 { font-size: 1rem; }
 h5 { font-size: 0.75rem; }
 h6 { font-size: 0.5rem; }
+
+a {
+  color: $text-blue;
+
+  &:hover,
+  &:focus {
+    color: darken($text-blue, 10%)
+  }
+
+  &:active {color: darken($text-blue, 20%)}
+}
