@@ -1,7 +1,8 @@
-require 'test_helper'
+require "test_helper"
 
 class ArticlesControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  test "can get articles" do
+    get articles_url
+    assert_response :success
+  end
 end
