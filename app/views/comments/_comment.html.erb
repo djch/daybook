@@ -1,13 +1,15 @@
-<p>
-  <em><%= comment.commenter %> commented:</em>
-  <span class="fr silver"><%= local_time_ago(comment.created_at) %></span>
-</p>
-<p>
-  <%= comment.body %>
-</p>
-<p>
-  <%= link_to 'Delete comment', [comment.article, comment],
-              remote: true,
-              method: :delete,
-              data: { confirm: "Definitely delete #{comment.commenter}\'s comment?" } %>
-</p>
+<div class="pa3" id="comment_<%= comment.id %>">
+  <span class="gray">
+    <%= comment.commenter %> commented
+    <%= local_time_ago(comment.created_at) %>:
+  </span>
+  <p class="mv1">
+    <%= comment.body %>
+  </p>
+  <div class="mv2 f6 lh-solid">
+    <%= link_to 'Delete this comment', [comment.article, comment],
+        method: :delete,
+        remote: :true,
+        data: { confirm: "Definitely delete #{comment.commenter}'s comment?" } %>
+  </div>
+</div>

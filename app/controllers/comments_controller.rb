@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
                             status: :created,
                             location: article_path(@comment) }
       else
-        format.html { render action: "new" }
+        format.html { render :new }
         format.json { render json: @comment.errors, status: unprocessable_entity }
       end
     end
@@ -25,7 +25,6 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @comment = @article.comments.find(params[:id])
     @comment.destroy
-    redirect_to article_path(@article)
   end
 
   private
