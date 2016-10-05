@@ -1,22 +1,23 @@
-<header class="mv3 tc">
-  <p><%= link_to '← Read a different article', articles_path %></p>
-  <p>
-    <%= link_to 'Edit this article', edit_article_path(@article) %> •
+<header class="mv2 tc">
+  <div>← <%= link_to 'Read a different article', articles_path %></div>
+  <div class="mv2">
+    <%= link_to 'Edit this article', edit_article_path(@article) %>
+    •
     <%= link_to 'Delete this article', article_path(@article),
             remote: true,
             method: :delete,
             data: { confirm: 'Definitely delete this article?' } %>
-  </p>
-
-  <h1 class="mt4 mb3"><%= @article.title %></h1>
-  <div class="gray">
-    Published on <%= local_date(@article.created_at) %>
   </div>
 </header>
 
+<h1 class="mb2 tc"><%= @article.title %></h1>
+<div class="mb4 gray tc">
+  Published on <%= local_date(@article.created_at) %>
+</div>
+
 <div class="trix-content"><%= @article.text.html_safe %></div>
 
-<hr class="mv4">
+<hr class="mv3">
 <h2><%= pluralize(@article.comments.count, 'comment') %></h2>
 <div id="thread">
   <%= render @article.comments %>

@@ -1,8 +1,11 @@
-<header class="mv3 tc">
-  <%= link_to '← Back to home', root_url %>
+<header class="mv2 tc">
+  ← <%= link_to 'Back to home', root_url %>
   <h1>Articles</h1>
-  <%= button_to 'Post an article', new_article_path, method: :get %>
 </header>
+
+<div class="mv3 tc">
+  <%= button_to 'Post an article', new_article_path, method: :get %>
+</div>
 
 <% @articles.each do |article| %>
   <h2 class="mb2"><%= article.title %></h2>
