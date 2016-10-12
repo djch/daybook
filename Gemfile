@@ -49,3 +49,6 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Rails engine for cache-friendly, client-side local time
 # TODO: Check if this pre-release version of locak_time is merged yet
 gem "local_time", github: "basecamp/local_time", branch: "2-0"
+
+# Parse CSS and add vendor prefixes to CSS rules using values from the Can I Use
+gem "autoprefixer-rails"
