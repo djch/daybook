@@ -18,15 +18,16 @@
     <%= f.label :title, class: "dn" %>
     <%= f.text_field :title,
                      class: "db w-100 pa2 ba b--light-silver br2",
-                     placeholder: "Enter a title..." %>
+                     placeholder: "Enter a title...",
+                     rows: "1" %>
   </h1>
-  <p>
+  <div class="mt2 mb3">
     <%= f.label :text, class: "dn" %>
     <%= f.hidden_field :text %>
     <trix-editor input="article_text"></trix-editor>
-  </p>
-  <p>
+  </div>
+  <div class="mb3 tc">
     <%= f.submit 'Publish this article' %>
-  </p>
+  </div>
 
 <% end %>
