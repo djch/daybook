@@ -1,0 +1,19 @@
+.flash {
+  position: absolute;
+  right: 0;
+  left: 0;
+  font-size: 0.875rem;
+  text-align: center;
+  animation: scale-fade-in 0.2s linear;
+}
+
+.flash-content {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+}
+
+.flash-content-notice {
+  background-color: #e8fdf5;
+  color: #137752;
+}
