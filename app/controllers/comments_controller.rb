@@ -1,17 +1,17 @@
 class CommentsController < ApplicationController
+  before_action :set_article
 
   def create
-    @article = Article.find(params[:article_id])
     @comment = @article.comments.new(comment_params)
 
     # Handle AJAX comment submissions
     respond_to do |format|
       if @comment.save
         format.html { redirect_to article_path(@comment), notice: "Comment added!" }
-        format.js   {}
-        format.json {render json: @comment,
-                            status: :created,
-                            location: article_path(@comment) }
+        format.js   { }
+        format.json { render json: @comment,
+                             status: :created,
+                             location: article_path(@comment) }
       else
         format.html { render :new }
         format.json { render json: @comment.errors, status: unprocessable_entity }
@@ -20,12 +20,15 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:article_id])
     @comment = @article.comments.find(params[:id])
     @comment.destroy
   end
 
   private
+    def set_article
+      @article = Article.find(params[:article_id])
+    end
+
     def comment_params
       params.require(:comment).permit(:commenter, :body)
     end
