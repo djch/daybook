@@ -4,7 +4,7 @@ This is a small Rails 5 project I've started to get familiar with Ruby on Rails.
 In its current iteration Day Book is a traditional blog. Authors can publish articles which readers (and the author) can comment on.
 
 ## Getting Started
-Before you set the project up, I recommend setting up your Ruby on Rails development environment according to [GoRails' fine instructions](https://gorails.com/setup/osx/10.11-el-capitan), for the platform you're on.
+Before you set the project up, I recommend setting up your Ruby on Rails development environment according to [GoRails' fine instructions](https://gorails.com/setup/), for the platform you're on.
 
 1. **Clone this repo** — You probably already know how to do this. If not, GitHub.com's help guides are very straightforward. Make sure you're inside the root project folder for the rest of these steps.
 
