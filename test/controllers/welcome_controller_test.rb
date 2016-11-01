@@ -8,12 +8,12 @@ class WelcomeControllerTest < ActionDispatch::IntegrationTest
   test "can get the welcome page" do
     get "/"
     assert_response :success
-    assert_select "title", "Welcome to #{@base_title}"
+    assert_select "title", "Welcome – #{@base_title}"
   end
 
   test "can get the about page" do
     get welcome_about_url
     assert_response :success
-    assert_select "title", "About #{@base_title}"
+    assert_select "title", "About – #{@base_title}"
   end
 end

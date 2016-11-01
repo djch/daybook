@@ -10,8 +10,8 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
     assert_difference("Comment.count") do
       post article_comments_url(@article),
                                 xhr: true,
-                                params: { comment: { commenter: "Rodrik F.",
-                                                     body: "Iron From Ice!" } }
+                                params: { comment: { commenter: "Jason M.",
+                                                     body: "Heynong man" } }
     end
     assert_equal "text/javascript", @response.content_type
     assert_equal 200, @response.status
