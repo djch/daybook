@@ -51,4 +51,4 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "local_time", github: "basecamp/local_time", branch: "2-0"
 
 # Parse CSS and add vendor prefixes to CSS rules using values from the Can I Use
-gem "autoprefixer-rails", "~> 6.5.1"
+gem "autoprefixer-rails", "~> 6.5.3"
