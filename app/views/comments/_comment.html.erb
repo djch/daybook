@@ -7,6 +7,7 @@
     <%= comment.body %>
   </p>
   <div class="mv2 f6 lh-solid">
+		<%# Destroying a comment will render 'destroy.js.erb' %>
     <%= link_to 'Delete this comment', [comment.article, comment],
         method: :delete,
         remote: :true,

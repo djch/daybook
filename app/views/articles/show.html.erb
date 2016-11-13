@@ -4,9 +4,9 @@
     <%= link_to 'Edit this article', edit_article_path(@article) %>
     •
     <%= link_to 'Delete this article', article_path(@article),
-            remote: true,
-            method: :delete,
-            data: { confirm: 'Definitely delete this article?' } %>
+        remote: true,
+        method: :delete,
+          data: { confirm: 'Definitely delete this article?' } %>
   </div>
 </header>
 
@@ -15,13 +15,18 @@
   Published on <%= local_date(@article.created_at) %>
 </div>
 
-<div class="trix-content"><%= @article.text.html_safe %></div>
+<div class="trix-content">
+	<%# renders richly-formatted article text %>
+	<%= @article.text.html_safe %>
+</div>
 
 <hr class="mv3">
 <h2><%= pluralize(@article.comments.count, 'comment') %></h2>
 <div id="thread">
+	<%# renders comments/_comment.html.erb %>
   <%= render @article.comments %>
 </div>
 <div>
+	<%# renders comments/_form.html.erb %>
   <%= render 'comments/form' %>
 </div>
