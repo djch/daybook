@@ -6,13 +6,13 @@ class WelcomeControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "can get the welcome page" do
-    get "/"
+    get root_path
     assert_response :success
     assert_select "title", "Welcome – #{@base_title}"
   end
 
   test "can get the about page" do
-    get welcome_about_url
+    get about_path
     assert_response :success
     assert_select "title", "About – #{@base_title}"
   end
