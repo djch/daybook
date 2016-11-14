@@ -4,23 +4,20 @@ class CommentsController < ApplicationController
   def create
     @comment = @article.comments.new(comment_params)
 
-    # Handle AJAX comment submissions
+    # Handle XHR comment submissions
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to article_path(@comment), notice: "Comment added!" }
-        format.js   { }
-        format.json { render json: @comment,
-                             status: :created,
-                             location: article_path(@comment) }
+        format.html { redirect_to article_path(@comment) }
+        format.js
       else
         format.html { render :new }
-        format.json { render json: @comment.errors, status: unprocessable_entity }
       end
     end
   end
 
   def destroy
     @comment = @article.comments.find(params[:id])
+    # The 'destroy' JS partial removes it from the client-side
     @comment.destroy
   end
 
