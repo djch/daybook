@@ -1,0 +1,15 @@
+// Apply this class to textual inputs
+// Adding `display: block` + `width: 100%` may be necessary in some instances
+.form-input {
+  padding: 0.75rem;
+  background-color: #fff;
+  border: 1px solid #bcbcbc;
+  border-radius: 0.25rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
