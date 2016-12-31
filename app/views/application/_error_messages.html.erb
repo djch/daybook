@@ -1,0 +1,10 @@
+<% if @user.errors.any? %>
+  <div class="dark-red" id="error_explanation">
+    <span>So close! But your details weren't quite complete:</p>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

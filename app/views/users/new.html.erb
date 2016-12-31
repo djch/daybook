@@ -1,6 +1,6 @@
 <% provide(:title, 'Sign up') %>
 
-<h1 class="black b f1 tc db">Sign up for Day Book</h1>
+<h1 class="tc">Sign up for Day Book</h1>
 <p>
 	Soon, Day Book will go from being public and anonymous to requiring an account.
 	With an account you'll be able to post your own Articles which readers can comment on.
@@ -8,3 +8,25 @@
 <p>
 	Sign up for an account now and we'll keep you posted.
 <p>
+
+<div class="mt4 mh4-ns pa3 bg-light-yellow br2">
+  <%= form_for(@user, url: signup_path) do |f| %>
+    <%= render 'application/error_messages' %>
+
+    <div class="mb3">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-input", placeholder: "Louise Banks" %>
+    </div>
+    <div class="mb3">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-input", placeholder: "louise@example.com" %>
+    </div>
+    <div class="mb3">
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "form-input", placeholder: "8+ characters" %>
+    </div>
+    <div class="tc">
+      <%= f.submit "Sign up for my account" %>
+    </div>
+  <% end %>
+</div>

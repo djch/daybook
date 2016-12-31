@@ -12,10 +12,10 @@
     <%= link_to 'Articles', controller: 'articles' %> or, you can find out
     <%= link_to 'about', about_path %> Day Book.
   </p>
-	<p class="mv4 tc b">
+	<div class="mt5 pa3 bg-light-yellow tc b br2 mid-gray">
 		Account-only features are coming soon.
-		Get a head start and <%= link_to 'sign up for an account', signup_path %>.
-	</p>
+		Get a head start and <%= link_to 'sign up for an account', signup_path, class: "db" %>
+  </div>
 </nav>
 
 <p class="mt5 tc gray">😊 Happy <%= local_time(Date.today, '%A') %>!</p>
