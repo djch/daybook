@@ -10,26 +10,26 @@ Before you set the project up, I recommend setting up your Ruby on Rails develop
 
 2. **Install the project dependencies** — Ruby packages are called [Gems](https://rubygems.org). When you want to manage groups of them, like for a particular project, the `bundle` comment is used.
 
-    ```
-    bundle install
-    ```
+	```
+	bundle install
+	```
 
 3. **Set up the database** — This will be familiar if you used other MVC frameworks. Your development DB will just be SQLite. In a production environment it'll be PostgreSQL.
 
-   ```
-   rails db:migrate
-   ```
+	```
+	rails db:migrate
+	```
 
 4. **Run the test suite** — If there's any problems so far, this should find them before you get as far your web browser. If it passes, you're all set to run the project server and start using it.
 
-    ```
-    rails test
-    ```
+	```
+	rails test
+	```
 
-5. **Start the web server** — Rail 5 uses [Puma](http://puma.io) for its development server. This runs in the foreground of your terminal so you'll probably want to open an additional tab while you work.
+5. **Start your dev server** — Rail 5 uses [Puma](http://puma.io) for its development server. This runs in the foreground of your terminal so you'll probably want to open an additional tab while you work.
 
-    ```
-    rails server
-    ```
+	```
+	rails server
+	```
 
-All that's left to do now is to open your web browser and navigate over to http://localhost:3000/. As you work on the project, the rails server will automatically reload with your changes.
+All that's left is to open your web browser and navigate to http://localhost:3000/. As you work on the project, the rails server will automatically reload with your changes.
