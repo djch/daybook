@@ -1,7 +1,6 @@
-<div class="tc mt3">
-  ← <%= link_to 'Back to home', root_path %>
-  <div class="mt4"><%= gravatar_for(@user, size: 160) %></div>
+<div class="mw5 mv3 center pa3 pa4-ns bg-white tc br3">
+  <div class="mt4"><%= gravatar_for(@user, size: 160, res: 320) %></div>
   <h1><%= @user.name %></h1>
-  <p><%= @user.email %></p>
-  <p>Joined <%= local_date(@user.created_at) %></p>
+  <span><%= @user.email %></span>
+  <p class="gray">Joined <%= local_date(@user.created_at) %></p>
 </div>

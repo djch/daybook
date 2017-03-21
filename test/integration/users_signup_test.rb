@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class UsersSignupTest < ActionDispatch::IntegrationTest
+
   test "cannot sign up with invalid details" do
     get signup_path
     assert_select 'form[action="/signup"]'
@@ -10,6 +11,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_select 'div#error_explanation'
     assert_select 'div.field_with_errors'
   end
+
   test "can sign up with valid details" do
     get signup_path
     assert_select 'form[action="/signup"]'
@@ -18,5 +20,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     end
     follow_redirect!
     assert_select 'div.flash-content-notice'
+    assert is_logged_in?
   end
 end

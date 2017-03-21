@@ -1,0 +1,27 @@
+<% provide(:title, 'Log in') %>
+
+<div class="tc">
+  <h1>
+    Welcome back to Day Book!
+  </h1>
+  <span class="f4">Your work is safe and secure, right where you left it</span>
+</div>
+
+<div class="mw6 center mt4 pa4 br3 ba bw1 b--purple">
+  <%= form_for(:session, url: sign_in_path) do |f| %>
+    <div class="mb3">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-input" %>
+    </div>
+    <div class="mb3">
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "form-input" %>
+    </div>
+    <div class="tc">
+      <%= f.submit "Sign in to my account", class: "btn btn-block" %>
+    </div>
+  <% end %>
+</div>
+<p class="tc">
+  Don't have an account yet? <%= link_to 'Sign up here', signup_path %>
+</p>

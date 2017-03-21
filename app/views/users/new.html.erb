@@ -2,14 +2,14 @@
 
 <h1 class="tc">Sign up for Day Book</h1>
 <p>
-	Soon, Day Book will go from being public and anonymous to requiring an account.
+	Soon Day Book will go from being public and anonymous to requiring an account.
 	With an account you'll be able to post your own Articles which readers can comment on.
 </p>
 <p>
 	Sign up for an account now and we'll keep you posted.
 <p>
 
-<div class="mt4 mh4-ns pa3 bg-light-yellow br2">
+<div class="mw6 center mt4 pa4 bg-washed-purple purple br2 ba bw2 b--light-purple">
   <%= form_for(@user, url: signup_path) do |f| %>
     <%= render 'application/error_messages' %>
 
@@ -26,7 +26,11 @@
       <%= f.password_field :password, class: "form-input", placeholder: "8+ characters" %>
     </div>
     <div class="tc">
-      <%= f.submit "Sign up for my account" %>
+      <%= f.submit "Sign up for my account", class: "btn btn-block purple" %>
     </div>
   <% end %>
 </div>
+<p class="tc">
+  Already signed up? <%= link_to 'Sign in here', sign_in_path %>
+</p>
+

@@ -1,0 +1,24 @@
+<nav class="fixed-l top-0 right-0 pa2-l tr i">
+  <ul class="ma0 pa0 nowrap overflow-x-auto">
+    <li class="dib db-l ma2">
+        <% if logged_in? %>
+          <%= link_to 'My Articles', current_user, class: "dark-gray hover-black" %>
+        <% else %>
+          <%= link_to 'Home', root_path, class: "dark-gray hover-black" %>
+        <% end %>
+    </li>
+    <li class="dib db-l ma2">
+      <%= link_to 'All Articles', articles_path, class: "dark-gray hover-black" %>
+    </li>
+    <li class="dib db-l ma2">
+      <%= link_to 'About', about_path, class: "dark-gray hover-black" %>
+    </li>
+    <li class="dib db-l ma2">
+      <% if logged_in? %>
+        <%= link_to 'Sign out', sign_out_path, class: "dark-gray hover-black", method: :delete %>
+      <% else %>
+        <%= link_to 'Sign in', sign_in_path, class: "dark-gray hover-black b" %>
+      <% end %>
+    </li>
+  </ul>
+</nav>

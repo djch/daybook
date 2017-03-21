@@ -1,13 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+arya:
   name: Arya Stark
   email: arya@winterfell.org
+  password_digest: <%= User.digest('ValarMorghulis') %>
 
-two:
+brienne:
   name: Brienne Tarth
   email: brienne@evenfallhall.org
+  password_digest: <%= User.digest('OathKeeper') %>
 
-three:
-  name: Maester Qyburn
-  email: maester@smallcouncil.gov
+samwell:
+  name: Samwell Tarly
+  email: tarly@thecitadel.gov
+  password_digest: <%= User.digest('DragonGlass') %>
