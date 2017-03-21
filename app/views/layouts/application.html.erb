@@ -7,14 +7,14 @@
     <%= stylesheet_link_tag    'application', 'data-turbolinks-track': 'reload', media: 'all' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
+  <body style="background-color: floralwhite">
+    <%= render 'layouts/navbar' %>
     <% flash.each do |type, message| %>
       <div class="flash">
         <%= content_tag :div, message, class: "flash-content flash-content-#{type}" %>
       </div>
     <% end %>
-    <div class="mw7 ph3 pb4 ph6-l center">
+    <div class="mw8 pb3 ph2 ph3-l center">
       <%= yield %>
     </div>
     <!-- <%= debug(params) if Rails.env.development? %> -->

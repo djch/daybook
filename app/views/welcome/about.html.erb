@@ -1,27 +1,28 @@
 <% provide(:title, "About") %>
 
-<header class="mv3 tc">
-  ← <%= link_to 'Back to home', root_path %>
-  <h1 class="black b f1 tc db">About Day Book</h1>
-</header>
-<p>
-  Day Book is a Rails app made by Dan Charlesworth (that's me). I'm building it
-  primarily for the purposes of learning, but who knows what it could grow up
-  into.
-</p>
-<h2>Acknowledgements</h2>
-<p>
-  Shout out to the open source projects that make Day Book possible:
-  <ul>
-    <li><%= link_to 'Ruby on Rails', 'http://rubyonrails.org', target: "_blank" %></li>
-    <li><%= link_to 'Trix', 'http://trix-editor.org', target: "_blank" %></li>
-    <li><%= link_to 'Tachyons', 'http://tachyons.io', target: "_blank" %></li>
-  </ul>
-</p>
-<p>
-  I'd also to give huge props to the fantastic guides from David Heinemeier
-  Hansson and the Rails team at
-  <%= link_to 'guides.rubyonrails.org', 'http://guides.rubyonrails.org', target: "_blank" %>,
-  and to Mr. Michael Hartl, author of <em>The Rails Tutorial</em> at
-  <%= link_to 'railstutorial.org', 'https://railstutorial.org', target: "_blank" %>.
-</p>
+<div class="center mt3 pa3 pa4-l bg-white">
+  <header class="tc">
+    <h1 class="mt0 black b f1 tc db">About Day Book</h1>
+  </header>
+  <p>
+    Day Book is a Rails app made by Dan Charlesworth (that's me). I'm building it
+    primarily for the purposes of learning, but who knows what it could grow up
+    into.
+  </p>
+  <h2>Acknowledgements</h2>
+  <p>
+    Shout out to the open source projects that make Day Book possible:
+    <ul>
+      <li><%= link_to 'Ruby on Rails', 'http://rubyonrails.org', target: "_blank" %></li>
+      <li><%= link_to 'Trix', 'http://trix-editor.org', target: "_blank" %></li>
+      <li><%= link_to 'Tachyons', 'http://tachyons.io', target: "_blank" %></li>
+    </ul>
+  </p>
+  <p>
+    I'd also to give huge props to the fantastic guides from David Heinemeier
+    Hansson and the Rails team at
+    <%= link_to 'guides.rubyonrails.org', 'http://guides.rubyonrails.org', target: "_blank" %>,
+    and to Mr. Michael Hartl, author of <em>The Rails Tutorial</em> at
+    <%= link_to 'railstutorial.org', 'https://railstutorial.org', target: "_blank" %>.
+  </p>
+</div>

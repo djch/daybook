@@ -25,30 +25,17 @@ trix-editor {
 }
 
 trix-toolbar {
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
-  overflow: scroll;
-
   .button_group {
-    margin-bottom: 0;
-    border-bottom: 0;
     border: 0;
-    border-radius: 0;
 
     button {
-      height: 2rem;
-      width: 2rem;
-      border: 0;
-      cursor: pointer;
+      border-bottom: 0;
+      border-radius: 9999px;
 
       &:not(:first-child) {
-        border: 0;
+        border-left: 0;
+        margin-left: 2px;
       }
     }
-  }
-
-  // The undo/redo buttons don't quite fit with our preferred page width
-  .history_tools {
-    float: right;
   }
 }

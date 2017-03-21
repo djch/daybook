@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+
   # Welcome
   root 'welcome#index'
   get  'welcome/index'
@@ -9,6 +11,11 @@ Rails.application.routes.draw do
   get  '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
   resources :users
+
+  # Sessions
+  get    '/sign_in',  to: 'sessions#new'
+  post   '/sign_in',  to: 'sessions#create'
+  delete '/sign_out', to: 'sessions#destroy'
 
   # Articles
   resources :articles do

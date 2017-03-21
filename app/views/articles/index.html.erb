@@ -1,21 +1,22 @@
 <header class="mv2 tc">
-  ← <%= link_to 'Back to home', root_path %>
   <h1>Articles</h1>
 </header>
 
 <div class="mv3 tc">
-  <%= button_to 'Post an article', new_article_path, method: :get %>
+  <%= button_to 'Start a new article', new_article_path, method: :get, class: "btn btn-primary" %>
 </div>
 
 <% @articles.each do |article| %>
-  <h2 class="mb2"><%= article.title %></h2>
-  <div class="gray">
-    Published on <%= local_date(article.created_at) %>
+  <div class="mv3 center mh5-ns pa3 pa5-ns bg-white br3">
+    <h2 class="mt0 mb2 f2"><%= article.title %></h2>
+    <div class="gray">
+      Published on <%= local_date(article.created_at) %>
+    </div>
+    <div class="trix-content mv3">
+        <%= strip_tags(article.text).truncate(96) %>
+    </div>
+    <p>
+      <%= link_to 'Continued…', article_path(article), class: "i" %>
+    </p>
   </div>
-  <div class="trix-content mv3">
-    <%= truncate(article.text, length: 960, separator: '. ', escape: false)%>
-  </div>
-  <p class="mb4">
-    <%= link_to 'Continued…', article_path(article), class: "i" %>
-  </p>
 <% end %>
