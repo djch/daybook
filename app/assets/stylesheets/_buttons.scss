@@ -1,8 +1,10 @@
+// Default
 .btn {
   display: inline-block;
   max-width: 100%;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.25rem;
   background-color: #fff;
+  color: inherit;
   font-weight: bold;
   border-radius: 0.5rem;
   border: 1px solid #bbb;
@@ -12,6 +14,11 @@
   -webkit-appearance: none;
   -moz-appearance: none;
 
+  &:focus,
+  &:hover {
+    color: inherit;
+  }
+
   &:active {
     color: inherit;
     background-color: #eee;
@@ -20,10 +27,26 @@
   }
 }
 
+// Sizing
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-sm {
+  padding: 0.5rem 0.75rem;
+}
+
+// Skins
 .btn-primary {
   color: #fff;
   background: $bg-blue;
   border-color: darken($bg-blue, 10%);
+
+  &:focus,
+  &:hover {
+    color: #fff;
+  }
 
   &:active {
     color: #fff;

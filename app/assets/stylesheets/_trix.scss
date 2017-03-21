@@ -23,3 +23,19 @@ trix-editor, .trix-content {
 trix-editor {
   min-height: 8rem;
 }
+
+trix-toolbar {
+  .button_group {
+    border: 0;
+
+    button {
+      border-bottom: 0;
+      border-radius: 9999px;
+
+      &:not(:first-child) {
+        border-left: 0;
+        margin-left: 2px;
+      }
+    }
+  }
+}
