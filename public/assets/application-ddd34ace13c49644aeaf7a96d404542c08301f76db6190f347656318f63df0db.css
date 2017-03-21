@@ -3306,8 +3306,8 @@ code, .code { font-family: Consolas, monaco, monospace; }
 }
 
 /*
-Trix 0.10.0
-Copyright © 2016 Basecamp, LLC
+Trix 0.10.1
+Copyright © 2017 Basecamp, LLC
 http://trix-editor.org/*/
 
 trix-editor {
@@ -3633,38 +3633,24 @@ trix-editor {
   min-height: 8rem;
 }
 
-/* line 27, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_trix.scss */
-trix-toolbar {
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
-  overflow: scroll;
-}
-/* line 32, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_trix.scss */
+/* line 28, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_trix.scss */
 trix-toolbar .button_group {
-  margin-bottom: 0;
-  border-bottom: 0;
   border: 0;
-  border-radius: 0;
 }
-/* line 38, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_trix.scss */
+/* line 31, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_trix.scss */
 trix-toolbar .button_group button {
-  height: 2rem;
-  width: 2rem;
-  border: 0;
-  cursor: pointer;
+  border-bottom: 0;
+  border-radius: 9999px;
 }
-/* line 44, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_trix.scss */
+/* line 35, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_trix.scss */
 trix-toolbar .button_group button:not(:first-child) {
-  border: 0;
-}
-/* line 51, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_trix.scss */
-trix-toolbar .history_tools {
-  float: right;
+  border-left: 0;
+  margin-left: 2px;
 }
 
 /* line 1, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_base.scss */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Apple Color Emoji", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 16px;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
@@ -3728,7 +3714,7 @@ a:active {
 
 /* line 38, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_base.scss */
 .avatar {
-  width: 5rem;
+  height: auto;
   border-radius: 9999px;
 }
 
@@ -3748,10 +3734,10 @@ a:active {
 
 /* line 1, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_flash.scss */
 .flash {
-  position: absolute;
+  position: fixed;
   right: 0;
   left: 0;
-  font-size: 0.875rem;
+  bottom: 0;
   text-align: center;
   -webkit-animation: scale-fade-in 0.2s linear;
           animation: scale-fade-in 0.2s linear;
@@ -3761,13 +3747,10 @@ a:active {
 .flash-content {
   display: inline-block;
   padding: 0.5rem 1rem;
-  border-radius: 9999px;
-}
-
-/* line 16, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_flash.scss */
-.flash-content-notice {
-  background-color: #e8fdf5;
-  color: #137752;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
 }
 
 /* line 3, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_forms.scss */
@@ -3798,4 +3781,89 @@ a:active {
 label {
   display: block;
   font-weight: bold;
+}
+
+/* line 2, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_buttons.scss */
+.btn {
+  display: inline-block;
+  max-width: 100%;
+  padding: 1rem 1.25rem;
+  background-color: #fff;
+  color: inherit;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  border: 1px solid #bbb;
+  border-bottom-width: 2px;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+/* line 17, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_buttons.scss */
+.btn:focus, .btn:hover {
+  color: inherit;
+}
+/* line 22, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_buttons.scss */
+.btn:active {
+  color: inherit;
+  background-color: #eee;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+}
+
+/* line 31, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_buttons.scss */
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+/* line 36, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_buttons.scss */
+.btn-sm {
+  padding: 0.5rem 0.75rem;
+}
+
+/* line 41, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_buttons.scss */
+.btn-primary {
+  color: #fff;
+  background: #357edd;
+  border-color: #2065bf;
+}
+/* line 46, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_buttons.scss */
+.btn-primary:focus, .btn-primary:hover {
+  color: #fff;
+}
+/* line 51, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_buttons.scss */
+.btn-primary:active {
+  color: #fff;
+  background: #1c5aa9;
+}
+
+/* line 2, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_skins.scss */
+.linen {
+  color: linen;
+}
+
+/* line 3, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_skins.scss */
+.floralwhite {
+  color: floralwhite;
+}
+
+/* line 5, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_skins.scss */
+.bg-linen {
+  background-color: linen;
+}
+
+/* line 6, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_skins.scss */
+.bg-floralwhite {
+  background-color: floralwhite;
+}
+
+/* line 9, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_skins.scss */
+.washed-purple {
+  color: #d2aff1;
+}
+
+/* line 11, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_skins.scss */
+.bg-washed-purple {
+  background-color: #d2aff1;
 }
