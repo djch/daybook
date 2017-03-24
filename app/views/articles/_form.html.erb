@@ -14,20 +14,22 @@
     </div>
   <% end %>
 
-  <h1>
-    <%= f.label :title, class: "dn" %>
-    <%= f.text_field :title,
-                     class: "form-input db w-100",
-                     placeholder: "Enter a title...",
-                     rows: "1" %>
-  </h1>
-  <div class="mt2 mb3">
-    <%= f.label :text, class: "dn" %>
-    <%= f.hidden_field :text %>
-    <trix-editor input="article_text"></trix-editor>
-  </div>
-  <div class="mb3 tc">
-    <%= f.submit 'Publish this article', class: "btn btn-primary" %>
+  <div class="mw7 center mt4 pa3 pa5-ns bg-white br3">
+    <h1 class="mt0">
+      <%= f.label :title, class: "dn" %>
+      <%= f.text_field :title,
+                       class: "form-input db w-100",
+                       placeholder: "Enter a title...",
+                       rows: "1" %>
+    </h1>
+    <div class="mt2 mb3">
+      <%= f.label :text, class: "dn" %>
+      <%= f.hidden_field :text %>
+      <trix-editor input="article_text"></trix-editor>
+    </div>
+    <div class="mb3 tc">
+      <%= f.submit 'Publish this article', class: "btn btn-primary" %>
+    </div>
   </div>
 
 <% end %>
