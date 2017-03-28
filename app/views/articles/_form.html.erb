@@ -22,12 +22,12 @@
                        placeholder: "Enter a title...",
                        rows: "1" %>
     </h1>
-    <div class="mt2 mb3">
-      <%= f.label :text, class: "dn" %>
-      <%= f.hidden_field :text %>
+    <%= f.label :text, class: "dn" %>
+    <%= f.hidden_field :text %>
+    <div class="article-editor">
       <trix-editor input="article_text"></trix-editor>
     </div>
-    <div class="mb3 tc">
+    <div class="mt3 tc">
       <%= f.submit 'Publish this article', class: "btn btn-primary" %>
     </div>
   </div>

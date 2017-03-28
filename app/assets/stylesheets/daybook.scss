@@ -1,10 +1,18 @@
 // Collect the SCSS partials into one file which gets loaded into the manifest
 // See: http://guides.rubyonrails.org/asset_pipeline.html#manifest-files-and-directives
 // -----------------------------------------------------------------------------
+
+// Baseline
 @import "_variables.scss";
-@import "_trix.scss";
 @import "_base.scss";
+@import "_skins.scss";
+
+// Components
 @import "_flash.scss";
 @import "_forms.scss";
 @import "_buttons.scss";
-@import "_skins.scss";
+@import "_trix.scss";
+
+// Views
+@import "articles.scss"
+
