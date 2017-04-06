@@ -23,6 +23,7 @@ class UsersSignInTest < ActionDispatch::IntegrationTest
     # Sign in
     post sign_in_path, params: { session: { email: @user.email, password: 'ValarMorghulis' } }
     assert is_logged_in?
+    assert_not_empty cookies['remember_token']
     follow_redirect!
     assert_select "a[href=?]", sign_in_path, count: 0
     assert_select "a[href=?]", sign_out_path
@@ -37,18 +38,5 @@ class UsersSignInTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", sign_in_path
     assert_select "a[href=?]", sign_out_path, count: 0
     assert_select "a[href=?]", user_path(@user), count: 0
-  end
-
-  test "can be permanently remembered as a signed in user" do
-    log_in_as(@user, password: 'ValarMorghulis', remember_me: '1')
-    assert_not_empty cookies['remember_token']
-  end
-
-  test "can be forgetten as a signed in user when the browser is closed" do
-    # Log in to set the cookie.
-    log_in_as(@user, password: 'ValarMorghulis', remember_me: '1')
-    # Log in again and verify that the cookie is deleted.
-    log_in_as(@user, password: 'ValarMorghulis', remember_me: '0')
-    assert_empty cookies['remember_token']
   end
 end
