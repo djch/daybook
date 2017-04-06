@@ -18,11 +18,12 @@ class UsersSignInTest < ActionDispatch::IntegrationTest
   end
 
   test "can sign in with valid details and then sign out" do
-    # Sign in
     get sign_in_path
     assert_select 'form[action="/sign_in"]'
+    # Sign in
     post sign_in_path, params: { session: { email: @user.email, password: 'ValarMorghulis' } }
     assert is_logged_in?
+    assert_not_empty cookies['remember_token']
     follow_redirect!
     assert_select "a[href=?]", sign_in_path, count: 0
     assert_select "a[href=?]", sign_out_path
@@ -31,6 +32,8 @@ class UsersSignInTest < ActionDispatch::IntegrationTest
     # Sign out
     delete sign_out_path
     assert_not is_logged_in?
+    # Simulate a user signing out in a second window.
+    delete sign_out_path
     follow_redirect!
     assert_select "a[href=?]", sign_in_path
     assert_select "a[href=?]", sign_out_path, count: 0
