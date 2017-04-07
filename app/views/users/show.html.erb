@@ -1,6 +1,13 @@
-<div class="mw5 mv3 center pa3 pa4-ns bg-white tc br3">
-  <div class="mt4"><%= gravatar_for(@user, size: 160, res: 320) %></div>
-  <h1><%= @user.name %></h1>
-  <span><%= @user.email %></span>
-  <p class="gray">Joined <%= local_date(@user.created_at) %></p>
+<div class="mw6 mv3 center pa3 pa4-ns bg-white br3">
+  <div class="cf mb3 pb3 bb b--light-gray">
+    <div class="fl pr3"><%= gravatar_for(@user, size: 80, res: 160) %></div>
+    <div class="fl">
+      <h1 class="mt0 f3"><%= @user.name %></h1>
+      <div><%= @user.email %></div>
+      <div class="gray">Joined <%= local_date(@user.created_at) %></div>
+    </div>
+  </div>
+  <div class="tc gray">
+    Settings will go here I spose
+  </div>
 </div>
