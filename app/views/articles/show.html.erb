@@ -16,7 +16,7 @@
     Published on <%= local_date(@article.created_at) %>
   </div>
 
-  <div class="trix-content mb5 f4">
+  <div class="trix-content mb5">
   	<%# renders richly-formatted article text %>
   	<%= @article.text.html_safe %>
   </div>
