@@ -1,0 +1,18 @@
+<%= provide(:title, 'All users') %>
+
+<h1 class="tc">Here's everyone on Day Book</h1>
+<% if @page.recordset.page_count > 1 %>
+  <div class="tc gray">
+    Showing page <%= @page.number %> of <%= @page.recordset.page_count %> (<%= @page.recordset.records_count %> total users)
+  </div>
+<% end  %>
+
+<div class="mw6 mv3 center pa3 pa4-ns bg-white br3">
+
+  <%= render @page.records %>
+
+  <% if !@page.last? %>
+    <hr>
+    <div class="tr"><%= link_to "Next page →", users_path(page: @page.next_number) %></div>
+  <% end %>
+</div>

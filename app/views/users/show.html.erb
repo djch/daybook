@@ -1,13 +1,17 @@
-<div class="mw6 mv3 center pa3 pa4-ns bg-white br3">
-  <div class="cf mb4 pb3 bb b--light-gray">
-    <div class="fl pr3"><%= gravatar_for(@user, size: 80, res: 160) %></div>
-    <div class="fl">
-      <h1 class="mt0 f3"><%= @user.name %></h1>
-      <div><%= @user.email %></div>
-      <div class="gray">Joined <%= local_date(@user.created_at) %></div>
-    </div>
+<% provide(:title, 'My Profile') %>
+
+<div class="mw6 mv3 center pa3 pa4-ns">
+  <div class="tc mb4">
+    <%= gravatar_for(@user, size: 80, res: 160) %>
+    <h1 class="mt0"><%= @user.name %></h1>
+    <div><%= @user.email %></div>
+    <div class="gray">Joined <%= local_date(@user.created_at) %></div>
   </div>
-  <div class="tc gray">
-    Settings will go here I spose
+  <div class="tc">
+    <% if current_user?(@user) || current_user.admin? %>
+      <%= link_to 'Edit profile', edit_user_path(@user) %>
+      <br>
+      <%= link_to 'Delete account', @user, class: "red hover-dark-red", method: :delete, remote: true, data: { confirm: "Seriously delete this account forever?" } %>
+    <% end %>
   </div>
 </div>

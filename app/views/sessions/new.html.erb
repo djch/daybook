@@ -8,7 +8,7 @@
 </div>
 
 <div class="mw6 center mt4 pa4 br3 ba bw1 b--purple">
-  <%= form_for(:session, url: sign_in_path) do |f| %>
+  <%= form_for(:session, url: sign_in_path, remote: true) do |f| %>
     <div class="mb3">
       <%= f.label :email %>
       <%= f.email_field :email, class: "form-input" %>
