@@ -40,8 +40,8 @@
 // Skins
 .btn-primary {
   color: #fff;
-  background: $bg-blue;
-  border-color: darken($bg-blue, 10%);
+  background: $bg-green;
+  border-color: darken($bg-green, 10%);
 
   &:focus,
   &:hover {
@@ -50,6 +50,6 @@
 
   &:active {
     color: #fff;
-    background: darken($bg-blue, 15%)
+    background: darken($bg-green, 15%)
   }
 }
