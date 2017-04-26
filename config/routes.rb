@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
-
   # Welcome
   root 'welcome#index'
   get  'welcome/index'
@@ -21,5 +19,4 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
-
 end
