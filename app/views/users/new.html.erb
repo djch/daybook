@@ -7,7 +7,28 @@
   </span>
 </header>
 
-<%= render 'form' %>
+<div class="mw6 center mt4 pa4 bg-washed-purple purple br2 ba bw2 b--light-purple">
+  <%= form_for(@user, url: signup_path, remote: true) do |f| %>
+    <%= render 'application/error_messages' %>
+
+    <div class="mb3">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-input", placeholder: "Louise Banks" %>
+    </div>
+    <div class="mb3">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-input", placeholder: "louise@example.com" %>
+    </div>
+    <div class="mb3">
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "form-input", placeholder: "8+ characters" %>
+    </div>
+    <div class="tc">
+      <%= f.submit "Sign up for my account", class: "btn btn-block purple" %>
+    </div>
+  <% end %>
+</div>
+
 <p class="tc">
   Already have an account? <%= link_to 'Sign in here', sign_in_path %>
 </p>

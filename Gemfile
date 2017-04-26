@@ -44,11 +44,22 @@ group :production do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Rails engine for cache-friendly, client-side local time
-# TODO: Check if this pre-release version of locak_time is merged yet
+# TODO: Check if this pre-release version of local_time is merged yet
 gem "local_time", github: "basecamp/local_time", branch: "2-0"
 
 # Parse CSS and add vendor prefixes to CSS rules using values from the Can I Use
 gem "autoprefixer-rails", "~> 6"
+
+# Pagination library courtesy of Basecamp
+# https://github.com/basecamp/geared_pagination
+gem "geared_pagination", github: "basecamp/geared_pagination", branch: "master"
+
+# Fake data generator
+gem "faker", group: [:development, :test]
+
+# Derailed: handy benchmarks to keep an eye on memory etc.
+gem "derailed_benchmarks", group: :development
+gem "stackprof", group: :development

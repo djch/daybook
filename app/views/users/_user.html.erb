@@ -1,0 +1,8 @@
+<div class="cf pv3">
+  <div class="fl pr3"><%= gravatar_for(user, size: 64, res: 128) %></div>
+  <div class="fl">
+    <h2 class="mt0 f4"><%= user.name %></h1>
+    <div><%= user.email %></div>
+    <%= link_to 'View profile', user %>
+  </div>
+</div>

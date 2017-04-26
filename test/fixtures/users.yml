@@ -1,4 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# No you're a nerd
 
 arya:
   name: Arya Stark
@@ -10,7 +11,30 @@ brienne:
   email: brienne@evenfallhall.org
   password_digest: <%= User.digest('OathKeeper') %>
 
+cersei:
+  name: Cersei Lannister
+  email: queen@casterlyrock.org
+  password_digest: <%= User.digest('LoveIsPoison') %>
+  admin: true
+
+daenerys:
+  name: Daenerys Targaryen
+  email: princess@dragonstone.org
+  password_digest: <%= User.digest('SunAndStars') %>
+
+ellaria:
+  name: Ellaria Sand
+  email: ellaria@sunspear.org
+  password_digest: <%= User.digest('Vengeance') %>
+
 samwell:
   name: Samwell Tarly
   email: tarly@thecitadel.gov
   password_digest: <%= User.digest('DragonGlass') %>
+
+<% 50.times do |n| %>
+user_<%= n %>:
+  name:  <%= "User #{n}" %>
+  email: <%= "user-#{n}@example.com" %>
+  password_digest: <%= User.digest('password') %>
+<% end %>
