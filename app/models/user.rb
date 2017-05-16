@@ -1,6 +1,7 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :activation_token
   before_save { email.downcase! }
+  before_create :create_activation_digest
 
   # 1. Name
   validates :name,  presence: true, length: { maximum: 50 }
@@ -37,9 +38,17 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 
-  # Returns true if the given remember_token (e.g. from a cookie) matches the remember_digest
-  def authenticated?(remember_token)
-    return false if remember_digest.nil?
-    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  # Returns true if the given token (e.g. from a cookie or URL param) matches the digest
+  def authenticated?(attribute, token)
+    digest = send("#{attribute}_digest")
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password?(token)
   end
+
+  private
+    # Creates and assigns the token and digest for an account activation
+    def create_activation_digest
+      self.activation_token  = User.new_token
+      self.activation_digest = User.digest(activation_token)
+    end
 end
