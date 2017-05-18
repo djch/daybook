@@ -5,6 +5,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:brienne)
     @other_user = users(:samwell)
+    @inactive_user = users(:daenerys)
   end
 
   test "should get the sign-up screen" do
@@ -67,5 +68,13 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       delete user_path(@user)
     end
     assert_redirected_to root_url
+  end
+
+  test "should not show inactive users to anyone" do
+    log_in_as(@other_user, password: "DragonGlass")
+    get users_path
+    assert_select 'a[href=?]', user_path(@other_user)
+    assert_select 'a[href=?]', user_path(@inactive_user), count: 0
+    get user_path(@inactive_user)
   end
 end

@@ -4,12 +4,14 @@ class UsersController < ApplicationController
 
   # GET /users (paginated with geared_pagination)
   def index
-    set_page_and_extract_portion_from User.order(created_at: :desc)
+    @users = User.where(activated: true)
+    set_page_and_extract_portion_from @users.order(created_at: :desc)
   end
 
   # GET /users/1
   def show
     @user = User.find(params[:id])
+    redirect_to root_url and return unless @user.activated?
   end
 
   # GET /sign_up
@@ -21,9 +23,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
-      flash[:notice] = "🙌 Welcome to your Day Book account! Take a look around."
-      redirect_to @user
+      @user.send_signup_email
+      flash[:notice] = "📧 Almost there! Check your email for an activation link."
+      redirect_to root_url
     else
       render 'new'
     end
