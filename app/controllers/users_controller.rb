@@ -4,12 +4,14 @@ class UsersController < ApplicationController
 
   # GET /users (paginated with geared_pagination)
   def index
-    set_page_and_extract_portion_from User.order(created_at: :desc)
+    @users = User.where(activated: true)
+    set_page_and_extract_portion_from @users.order(created_at: :desc)
   end
 
   # GET /users/1
   def show
     @user = User.find(params[:id])
+    redirect_to root_url and return unless @user.activated?
   end
 
   # GET /sign_up
