@@ -45,6 +45,15 @@ class User < ApplicationRecord
     BCrypt::Password.new(digest).is_password?(token)
   end
 
+  # Activates an account
+  def activate
+    update_columns(activated: true, activated_at: Time.zone.now)
+  end
+
+  def send_signup_email
+    UserMailer.account_activation(self).deliver_now
+  end
+
   private
     # Creates and assigns the token and digest for an account activation
     def create_activation_digest
