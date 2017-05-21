@@ -5,50 +5,36 @@ arya:
   name: Arya Stark
   email: arya@winterfell.org
   password_digest: <%= User.digest('ValarMorghulis') %>
-  activated: true
-  activated_at: <%= Time.zone.now %>
 
 brienne:
   name: Brienne Tarth
   email: brienne@evenfallhall.org
   password_digest: <%= User.digest('OathKeeper') %>
-  activated: true
-  activated_at: <%= Time.zone.now %>
 
 cersei:
   name: Cersei Lannister
   email: queen@casterlyrock.org
   password_digest: <%= User.digest('LoveIsPoison') %>
   admin: true
-  activated: true
-  activated_at: <%= Time.zone.now %>
 
 daenerys:
   name: Daenerys Targaryen
   email: princess@dragonstone.org
   password_digest: <%= User.digest('SunAndStars') %>
-  activated: false
-  activation_digest: <%= User.digest('8N8yoLNdCEAhdu6vw-oauw') %>
-
 
 ellaria:
   name: Ellaria Sand
   email: ellaria@sunspear.org
   password_digest: <%= User.digest('Vengeance') %>
-  activated: true
-  activated_at: <%= Time.zone.now %>
 
 samwell:
   name: Samwell Tarly
   email: tarly@thecitadel.gov
   password_digest: <%= User.digest('DragonGlass') %>
-  activated: true
 
 <% 50.times do |n| %>
 user_<%= n %>:
   name:  <%= "User #{n}" %>
   email: <%= "user-#{n}@example.com" %>
   password_digest: <%= User.digest('password') %>
-  activated: true
-  activated_at: <%= Time.zone.now %>
 <% end %>

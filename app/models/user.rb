@@ -1,7 +1,6 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token, :activation_token
+  attr_accessor :remember_token
   before_save { email.downcase! }
-  before_create :create_activation_digest
 
   # 1. Name
   validates :name,  presence: true, length: { maximum: 50 }
@@ -45,19 +44,7 @@ class User < ApplicationRecord
     BCrypt::Password.new(digest).is_password?(token)
   end
 
-  # Activates an account
-  def activate
-    update_columns(activated: true, activated_at: Time.zone.now)
-  end
-
   def send_signup_email
-    UserMailer.account_activation(self).deliver_now
+    UserMailer.welcome_aboard(self).deliver_now
   end
-
-  private
-    # Creates and assigns the token and digest for an account activation
-    def create_activation_digest
-      self.activation_token  = User.new_token
-      self.activation_digest = User.digest(activation_token)
-    end
 end
