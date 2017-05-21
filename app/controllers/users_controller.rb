@@ -4,7 +4,8 @@ class UsersController < ApplicationController
 
   # GET /users (paginated with geared_pagination)
   def index
-    set_page_and_extract_portion_from User.order(created_at: :desc)
+    @users = User.order(created_at: :asc)
+    set_page_and_extract_portion_from @users
   end
 
   # GET /users/1
@@ -22,7 +23,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:notice] = "🙌 Welcome to your Day Book account! Take a look around."
+      @user.send_signup_email
+      flash[:notice] = "🙌 Welcome aboard! Take a look around."
       redirect_to @user
     else
       render 'new'

@@ -12,6 +12,7 @@ class UsersSignInTest < ActionDispatch::IntegrationTest
     post sign_in_path, params: { session: { email: "", password: "" } }
     assert_not flash.empty?
     assert_select 'form[action="/sign_in"]'
+    assert_select 'div.flash-content-error'
     # Make sure the flash doesn't persist after navigating away
     get root_path
     assert flash.empty?

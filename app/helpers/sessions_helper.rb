@@ -21,13 +21,13 @@ module SessionsHelper
 
   # Returns the currently logged-in user
   # If there's no user in the temporary session we check for a permanent
-  # session in the cookies and log them in if one exists.
+  # session in the browser's cookies and log them in if one exists.
   def current_user
     if (user_id = session[:user_id])
       @current_user ||= User.find_by(id: user_id)
     elsif (user_id = cookies.signed[:user_id])
       user = User.find_by(id: user_id)
-      if user && user.authenticated?(cookies[:remember_token])
+      if user && user.authenticated?(:remember, cookies[:remember_token])
         log_in user
         @current_user = user
       end

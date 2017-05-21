@@ -37,9 +37,14 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 
-  # Returns true if the given remember_token (e.g. from a cookie) matches the remember_digest
-  def authenticated?(remember_token)
-    return false if remember_digest.nil?
-    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  # Returns true if the given token (e.g. from a cookie or URL param) matches the digest
+  def authenticated?(attribute, token)
+    digest = send("#{attribute}_digest")
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password?(token)
+  end
+
+  def send_signup_email
+    UserMailer.welcome_aboard(self).deliver_now
   end
 end
