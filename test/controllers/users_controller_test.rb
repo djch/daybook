@@ -69,12 +69,4 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to root_url
   end
-
-  test "should not show inactive users to anyone" do
-    log_in_as(@other_user, password: "DragonGlass")
-    get users_path
-    assert_select 'a[href=?]', user_path(@other_user)
-    assert_select 'a[href=?]', user_path(@inactive_user), count: 0
-    get user_path(@inactive_user)
-  end
 end
