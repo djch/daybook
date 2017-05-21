@@ -16,7 +16,7 @@
 
 */
 
-/*! TACHYONS v4.6.1 | http://tachyons.io */
+/*! TACHYONS v4.7.3 | http://tachyons.io */
 /*
  *
  *      ________            ______
@@ -40,17 +40,16 @@
  *
  */
 /* External Library Includes */
-/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
-/**
- * 1. Change the default font family in all browsers (opinionated).
- * 2. Correct the line height in all browsers.
- * 3. Prevent adjustments of font size after orientation changes in
- *    IE on Windows Phone and in iOS.
- */
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
 
-html { font-family: sans-serif; /* 1 */ line-height: 1.15; /* 2 */ -ms-text-size-adjust: 100%; /* 3 */ -webkit-text-size-adjust: 100%; /* 3 */ }
+html { line-height: 1.15; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ }
 /* Sections
    ========================================================================== */
 /**
@@ -95,12 +94,7 @@ pre { font-family: monospace, monospace; /* 1 */ font-size: 1em; /* 2 */ }
  */
 a { background-color: transparent; /* 1 */ -webkit-text-decoration-skip: objects; /* 2 */ }
 /**
- * Remove the outline on focused links when they are also active or hovered
- * in all browsers (opinionated).
- */
-a:active, a:hover { outline-width: 0; }
-/**
- * 1. Remove the bottom border in Firefox 39-.
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] { border-bottom: none; /* 1 */ text-decoration: underline; /* 2 */ text-decoration: underline dotted; /* 2 */ }
@@ -160,7 +154,7 @@ svg:not(:root) { overflow: hidden; }
  * 1. Change the font styles in all browsers (opinionated).
  * 2. Remove the margin in Firefox and Safari.
  */
-button, input, optgroup, select, textarea { font-size: 100%; /* 1 */ line-height: 1.15; /* 1 */ margin: 0; /* 2 */ }
+button, input, optgroup, select, textarea { font-family: sans-serif; /* 1 */ font-size: 100%; /* 1 */ line-height: 1.15; /* 1 */ margin: 0; /* 2 */ }
 /**
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
@@ -189,9 +183,9 @@ button::-moz-focus-inner, [type="button"]::-moz-focus-inner,
 button:-moz-focusring, [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring { outline: 1px dotted ButtonText; }
 /**
- * Change the border, margin, and padding in all browsers (opinionated).
+ * Correct the padding in Firefox.
  */
-fieldset { border: 1px solid #c0c0c0; margin: 0 2px; padding: .35em .625em .75em; }
+fieldset { padding: .35em .75em .625em; }
 /**
  * 1. Correct the text wrapping in Edge and IE.
  * 2. Correct the color inheritance from `fieldset` elements in IE.
@@ -712,6 +706,9 @@ img { max-width: 100%; }
 .flex-column { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
 .flex-row { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; }
 .flex-wrap { -ms-flex-wrap: wrap; flex-wrap: wrap; }
+.flex-column-reverse { -webkit-box-orient: vertical; -webkit-box-direction: reverse; -ms-flex-direction: column-reverse; flex-direction: column-reverse; }
+.flex-row-reverse { -webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse; flex-direction: row-reverse; }
+.flex-wrap-reverse { -ms-flex-wrap: wrap-reverse; flex-wrap: wrap-reverse; }
 .items-start { -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
 .items-end { -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end; }
 .items-center { -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
@@ -1899,8 +1896,8 @@ code, .code { font-family: Consolas, monaco, monospace; }
 
 */
 .dim { opacity: 1; -webkit-transition: opacity .15s ease-in; transition: opacity .15s ease-in; }
-.dim:hover, .dim:focus { -webkit-backface-visibility: hidden; backface-visibility: hidden; opacity: .5; -webkit-transition: opacity .15s ease-in; transition: opacity .15s ease-in; }
-.dim:active { -webkit-backface-visibility: hidden; backface-visibility: hidden; opacity: .8; -webkit-transition: opacity .15s ease-out; transition: opacity .15s ease-out; }
+.dim:hover, .dim:focus { opacity: .5; -webkit-transition: opacity .15s ease-in; transition: opacity .15s ease-in; }
+.dim:active { opacity: .8; -webkit-transition: opacity .15s ease-out; transition: opacity .15s ease-out; }
 /*
 
   Animate opacity to 100% on hover by adding the glow class.
@@ -2197,6 +2194,9 @@ code, .code { font-family: Consolas, monaco, monospace; }
  .flex-column-ns { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
  .flex-row-ns { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; }
  .flex-wrap-ns { -ms-flex-wrap: wrap; flex-wrap: wrap; }
+ .flex-column-reverse-ns { -webkit-box-orient: vertical; -webkit-box-direction: reverse; -ms-flex-direction: column-reverse; flex-direction: column-reverse; }
+ .flex-row-reverse-ns { -webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse; flex-direction: row-reverse; }
+ .flex-wrap-reverse-ns { -ms-flex-wrap: wrap-reverse; flex-wrap: wrap-reverse; }
  .items-start-ns { -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
  .items-end-ns { -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end; }
  .items-center-ns { -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
@@ -2609,6 +2609,9 @@ code, .code { font-family: Consolas, monaco, monospace; }
  .flex-column-m { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
  .flex-row-m { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; }
  .flex-wrap-m { -ms-flex-wrap: wrap; flex-wrap: wrap; }
+ .flex-column-reverse-m { -webkit-box-orient: vertical; -webkit-box-direction: reverse; -ms-flex-direction: column-reverse; flex-direction: column-reverse; }
+ .flex-row-reverse-m { -webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse; flex-direction: row-reverse; }
+ .flex-wrap-reverse-m { -ms-flex-wrap: wrap-reverse; flex-wrap: wrap-reverse; }
  .items-start-m { -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
  .items-end-m { -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end; }
  .items-center-m { -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
@@ -3021,6 +3024,9 @@ code, .code { font-family: Consolas, monaco, monospace; }
  .flex-column-l { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
  .flex-row-l { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; }
  .flex-wrap-l { -ms-flex-wrap: wrap; flex-wrap: wrap; }
+ .flex-column-reverse-l { -webkit-box-orient: vertical; -webkit-box-direction: reverse; -ms-flex-direction: column-reverse; flex-direction: column-reverse; }
+ .flex-row-reverse-l { -webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse; flex-direction: row-reverse; }
+ .flex-wrap-reverse-l { -ms-flex-wrap: wrap-reverse; flex-wrap: wrap-reverse; }
  .items-start-l { -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
  .items-end-l { -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end; }
  .items-center-l { -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
@@ -3683,25 +3689,33 @@ h6, .h6 {
 }
 
 /* line 27, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_base.scss */
+hr {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 0;
+  border-top: 1px solid #d1d1d1;
+}
+
+/* line 34, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_base.scss */
 a {
   color: #207de8;
 }
-/* line 30, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_base.scss */
+/* line 37, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_base.scss */
 a:hover, a:focus {
   color: #1464c1;
 }
-/* line 35, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_base.scss */
+/* line 42, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_base.scss */
 a:active {
   color: #0f4c93;
 }
 
-/* line 38, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_base.scss */
+/* line 45, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_base.scss */
 .avatar {
   height: auto;
   border-radius: 9999px;
 }
 
-/* line 43, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_base.scss */
+/* line 50, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_base.scss */
 .debug_dump {
   position: fixed;
   right: 0;
@@ -3727,7 +3741,7 @@ a:active {
 
 /* line 5, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_skins.scss */
 .bg-linen {
-  background-color: linen;
+  background-color: #f8f6e7;
 }
 
 /* line 6, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_skins.scss */
@@ -3751,12 +3765,13 @@ a:active {
   right: 0;
   left: 0;
   bottom: 0;
+  z-index: 9;
   text-align: center;
   -webkit-animation: scale-fade-in 0.2s linear;
           animation: scale-fade-in 0.2s linear;
 }
 
-/* line 10, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_flash.scss */
+/* line 11, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_flash.scss */
 .flash-content {
   display: inline-block;
   padding: 0.5rem 1rem;
@@ -3835,8 +3850,8 @@ label {
 /* line 41, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_buttons.scss */
 .btn-primary {
   color: #fff;
-  background: #357edd;
-  border-color: #2065bf;
+  background: #1ca97c;
+  border-color: #157d5c;
 }
 /* line 46, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_buttons.scss */
 .btn-primary:focus, .btn-primary:hover {
@@ -3845,7 +3860,7 @@ label {
 /* line 51, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_buttons.scss */
 .btn-primary:active {
   color: #fff;
-  background: #1c5aa9;
+  background: #11674c;
 }
 
 /* line 2, /Users/Dan/Sites/djch/daybook/app/assets/stylesheets/_trix.scss */
