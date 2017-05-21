@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
-gem 'rails', '~> 5.0', '>= 5.0.1'
+gem 'rails', '~> 5.1'
 # Use Puma as the app server
 gem "puma", "~> 3.0"
 # Use SCSS for stylesheets
@@ -51,11 +51,11 @@ end
 gem "local_time", github: "basecamp/local_time", branch: "2-0"
 
 # Parse CSS and add vendor prefixes to CSS rules using values from the Can I Use
-gem "autoprefixer-rails", "~> 6"
+gem "autoprefixer-rails", "~> 7"
 
 # Pagination library courtesy of Basecamp
 # https://github.com/basecamp/geared_pagination
-gem "geared_pagination", github: "basecamp/geared_pagination", branch: "master"
+gem "geared_pagination", "~> 0.2"
 
 # Fake data generator
 gem "faker", group: [:development, :test]
