@@ -3,7 +3,41 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .article-editor {
 
+  .article-editor-title {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+
+    input {
+      padding: 0;
+      font-weight: bold;
+      border: 0;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+  
   trix-toolbar {
     overflow-x: scroll;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    border-top: 1px dotted #d8c6a6;
+    border-bottom: 1px dotted #d8c6a6;
+  }
+  
+  trix-editor {
+    padding-top: 1rem;
+    border: 0;
+    min-height: 8rem;
+  }
+
+  @media #{$breakpoint-not-small} {
+    trix-toolbar {
+      margin-left: -4rem;
+      margin-right: -4rem;
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
   }
 }

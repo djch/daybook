@@ -1,13 +1,11 @@
 <% provide(:title, 'Log in') %>
 
 <div class="tc">
-  <h1>
-    Welcome back to Day Book!
-  </h1>
+  <h1>Welcome back to Day Book!</h1>
   <span class="f4">Your work is safe and secure, right where you left it</span>
 </div>
 
-<div class="mw6 center mt4 pa4 br3 ba bw1 b--purple">
+<div class="mw6 center mt4 pa4 br2 ba bw1 b--purple">
   <%= form_for(:session, url: sign_in_path) do |f| %>
     <div class="mb3">
       <%= f.label :email %>
