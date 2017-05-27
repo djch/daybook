@@ -3,9 +3,8 @@
   <head>
     <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', 'data-turbolinks-track': 'reload', media: 'all' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', 'defer': 'defer' %>
   </head>
   <body class="bg-linen">
     <%= render 'layouts/navbar' %>
