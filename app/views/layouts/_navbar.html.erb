@@ -1,8 +1,10 @@
 <nav class="fixed-l top-0 right-0 pa2-l tr i">
   <ul class="ma0 pa0 nowrap overflow-x-auto">
-    <li class="dib db-l ma2">
+    <li class="dib db-l fl fn-l ma1 ma-2-l">
         <% if logged_in? %>
-          <%= link_to 'My Profile', current_user, class: "dark-gray hover-black" %>
+          <%= link_to current_user, title: 'My profile' do %>
+            <%= gravatar_for(current_user, size: 32, res: 64) %>
+          <% end %>
         <% else %>
           <%= link_to 'Home', root_path, class: "dark-gray hover-black" %>
         <% end %>
