@@ -13,7 +13,7 @@
       Published on <%= local_date(article.created_at) %>
     </div>
     <div class="trix-content mv3">
-        <%= strip_tags(article.text).truncate(256) %>
+        <%= strip_tags(article.text).truncate(256) if article.text? %>
     </div>
     <%= link_to 'Continued…', article_path(article), class: "i" %>
   </div>
