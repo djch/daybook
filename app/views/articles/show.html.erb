@@ -17,7 +17,7 @@
   </div>
   <div class="trix-content mb5">
   	<%# renders richly-formatted article text %>
-  	<%= @article.text.html_safe %>
+  	<%= @article.text.html_safe if @article.text? %>
   </div>
 </div>
 <div class="mw7 center mb4">
