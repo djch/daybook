@@ -30,6 +30,8 @@ gem "bcrypt", "~> 3.1.11"
 group :development, :test do
   gem "sqlite3"
   gem "byebug", platform: :mri
+  gem 'capybara', '~> 2.13'
+  gem 'selenium-webdriver'
 end
 
 group :development do

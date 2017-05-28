@@ -26,6 +26,8 @@ Before you set the project up, I recommend setting up your Ruby on Rails develop
 	rails test
 	```
 
+  **Note:** System tests require [chromedriver](https://sites.google.com/a/chromium.org/chromedriver/) in order to run (`rails test:system`). If you're on MacOS the simplest way to install it is via homebrew with `brew install chromedriver`.
+
 5. **Start your dev server** — Rail 5 uses [Puma](http://puma.io) for its development server. This runs in the foreground of your terminal so you'll probably want to open an additional tab while you work.
 
 	```
