@@ -8,20 +8,19 @@
 </header>
 
 <div class="mw6 center mt4 pa4 bg-washed-purple purple br2 ba bw2 b--light-purple">
-  <%= form_for(@user, url: signup_path, remote: true) do |f| %>
+  <%= form_for(@user, url: signup_path) do |f| %>
     <%= render 'application/error_messages' %>
-
     <div class="mb3">
       <%= f.label :name %>
-      <%= f.text_field :name, class: "form-input", placeholder: "Louise Banks" %>
+      <%= f.text_field :name, class: "form-input", placeholder: "Louise Banks", required: true %>
     </div>
     <div class="mb3">
       <%= f.label :email %>
-      <%= f.email_field :email, class: "form-input", placeholder: "louise@example.com" %>
+      <%= f.email_field :email, class: "form-input", placeholder: "louise@example.com", required: true %>
     </div>
     <div class="mb3">
       <%= f.label :password %>
-      <%= f.password_field :password, class: "form-input", placeholder: "8+ characters" %>
+      <%= f.password_field :password, class: "form-input", placeholder: "8+ characters", required: true %>
     </div>
     <div class="tc">
       <%= f.submit "Sign up for my account", class: "btn btn-block purple" %>

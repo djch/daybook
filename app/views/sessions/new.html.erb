@@ -9,11 +9,11 @@
   <%= form_for(:session, url: sign_in_path) do |f| %>
     <div class="mb3">
       <%= f.label :email %>
-      <%= f.email_field :email, class: "form-input" %>
+      <%= f.email_field :email, class: "form-input", required: true %>
     </div>
     <div class="mb3">
       <%= f.label :password %>
-      <%= f.password_field :password, class: "form-input" %>
+      <%= f.password_field :password, class: "form-input", required: true %>
     </div>
     <div class="tc">
       <%= f.submit "Sign in to my account", class: "btn btn-block" %>
