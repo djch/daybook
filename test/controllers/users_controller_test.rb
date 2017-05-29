@@ -1,11 +1,9 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
-
   def setup
     @user = users(:brienne)
     @other_user = users(:samwell)
-    @inactive_user = users(:daenerys)
   end
 
   test "should get the sign-up screen" do

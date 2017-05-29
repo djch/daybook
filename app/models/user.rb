@@ -1,16 +1,12 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
   before_save { email.downcase! }
-
-  # 1. Name
   validates :name,  presence: true, length: { maximum: 50 }
-  # 2. Email
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true,
                     length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
-  # 3. Password
   has_secure_password
   validates :password, presence: true, length: { minimum: 8 }, allow_nil: true
 
@@ -21,7 +17,7 @@ class User < ApplicationRecord
     BCrypt::Password.create(string, cost: cost)
   end
 
-  # Returns a random token, suitable for securing persistent session data
+  # Returns a random token, suitable for generating a digest to secure an action
   def User.new_token
     SecureRandom.urlsafe_base64
   end
@@ -32,7 +28,7 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, User.digest(remember_token))
   end
 
-  # Forgets a user
+  # Forgets a user's logged-in session
   def forget
     update_attribute(:remember_digest, nil)
   end
