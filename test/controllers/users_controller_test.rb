@@ -13,13 +13,19 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should prevent sign up when signed in" do
+    log_in_as(@user, password: "OathKeeper")
+    get signup_path
+    assert_redirected_to user_path(@user)
+  end
+
   test "should redirect user index when not signed in" do
     get users_path
     assert_not flash.empty?
     assert_redirected_to sign_in_url
   end
 
-  test "should redirect user edit when not signed in" do
+  test "should redirect user edit while not signed in" do
     get edit_user_path(@user)
     assert_not flash.empty?
     assert_redirected_to sign_in_url

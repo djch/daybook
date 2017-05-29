@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   # GET /sign_up
   def new
     @user = User.new
+    redirect_to current_user if logged_in?
   end
 
   # POST /sign_up
