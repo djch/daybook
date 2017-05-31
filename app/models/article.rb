@@ -3,7 +3,8 @@ class Article < ApplicationRecord
   
   has_many :comments, dependent: :destroy
 
-  def set_title_if_blank
-    self.title = "Untitled" if self.title.blank?
-  end
+  private
+    def set_title_if_blank
+      self.title = "Untitled" if self.title.blank?
+    end
 end
