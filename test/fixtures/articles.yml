@@ -1,14 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  text: MyText
+  title: Logged
+  text: The stars turn and a time presents itself
 
 two:
-  title: MyString
-  text: MyText
+  title: Garmonbozia
+  text: I want my garmonbozia (pain and sorrow)
 
 three:
-  title:
-  text: Fire walk with me.
-    
+  title: Untitled
+  text: That gum you like is going to...come back in style.
