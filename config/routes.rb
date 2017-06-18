@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   # Users
   get  '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
+  get  '/forgot_password', to: 'password_resets#new'
+  post '/forgot_password', to: 'password_resets#create'
   resources :users
+  resources :password_resets, only: [:new, :create, :edit, :update]
 
   # Sessions
   get    '/sign_in',  to: 'sessions#new'

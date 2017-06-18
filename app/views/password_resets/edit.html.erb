@@ -1,0 +1,23 @@
+<% provide(:title, 'Reset password') %>
+
+<h1 class="f2 tc">Welcome back <%= @user.name %>!</h2>
+<div class="f4 tc">
+  Choose a new password for your account
+</div>
+<div class="mw6 mv3 center pa3 pa4-ns bg-white br2">
+  <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+    <div class="dark-red">
+      <%= render 'application/error_messages' %>
+    </div>
+
+    <%= hidden_field_tag :email, @user.email %>
+    <div class="mb3">
+      <%= f.label :password, 'Enter a new password' %>
+      <%= f.password_field :password, class: "form-input" %>
+      <span class="f6">At least 8 characters and 1 number, please</span>
+    </div>
+    <div class="tc">
+      <%= f.submit "Set my new password", class: "btn btn-block btn-primary" %>
+    </div>
+  <% end %>
+</div>
