@@ -4,11 +4,12 @@
   width: 100%;
   padding: 0.75rem;
   background-color: #fff;
+  color: $text-black;
   border: 1px solid #bcbcbc;
   border-radius: 0.25rem;
   -webkit-appearance: none;
   -moz-appearance: none;
-  
+
   &::placeholder {
     color: #999;
   };
