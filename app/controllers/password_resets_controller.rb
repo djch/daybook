@@ -32,6 +32,7 @@ class PasswordResetsController < ApplicationController
       render 'edit'
     elsif @user.update_attributes(user_params)
       log_in @user
+      @user.update_attribute(:reset_digest, nil)
       flash[:notice] = "👍 Welcome back! Your new password's been saved"
       redirect_to @user
     else
@@ -57,7 +58,7 @@ class PasswordResetsController < ApplicationController
 
     def check_expiration
       if @user.password_reset_expired?
-        flash[:error] = "⏱ Sorry your password reset link has expired"
+        flash[:error] = "⏱ Sorry that password reset link has expired"
         redirect_to new_password_reset_url
       end
     end
