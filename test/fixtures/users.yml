@@ -21,6 +21,8 @@ daenerys:
   name: Daenerys Targaryen
   email: princess@dragonstone.org
   password_digest: <%= User.digest('SunAndStars') %>
+  reset_digest: <%= User.digest('iGqEHcHgh4IQbVJpvB4Taw') %>
+  reset_sent_at: <%= 3.minutes.ago %>
 
 ellaria:
   name: Ellaria Sand
@@ -31,6 +33,8 @@ samwell:
   name: Samwell Tarly
   email: tarly@thecitadel.gov
   password_digest: <%= User.digest('DragonGlass') %>
+  reset_digest: <%= User.digest('VEwm1cSlHtQasKXp5S2Wog') %>
+  reset_sent_at: <%= 3.hours.ago %>
 
 <% 50.times do |n| %>
 user_<%= n %>:

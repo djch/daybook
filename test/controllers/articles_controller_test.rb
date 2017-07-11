@@ -17,14 +17,14 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
     get new_article_url
     assert_response :success
+    assert_select 'div.article-editor'
   end
 
   test "should create article" do
     assert_difference("Article.count") do
-      post articles_url, params: { article: { title: "Thank You!",
-                                               text: "Today I feel inspired."} }
+      post articles_url, params: { article: { title: "Flows",
+                                               text: "The dimension of time." } }
     end
-
     assert_redirected_to article_url(Article.last)
   end
 
@@ -36,15 +36,16 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
   test "should get article editor" do
     get edit_article_url(@article)
     assert_response :success
+    assert_select 'div.article-editor'
   end
 
   test "should update article" do
-    patch article_url(@article), params: { article: { title: "Flows",
-                                                       text: "The dimension of time"} }
+    patch article_url(@article), params: { article: { title: "",
+                                                       text: "The owls are not what they seem." } }
     assert_redirected_to article_url(@article)
-    # Reload association to fetch updated data and assert that title is updated
     @article.reload
-    assert_equal "Flows", @article.title
+    assert_equal "Untitled", @article.title
+    assert_equal "The owls are not what they seem.", @article.text
   end
 
   test "should destroy article" do

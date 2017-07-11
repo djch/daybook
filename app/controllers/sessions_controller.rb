@@ -12,8 +12,13 @@ class SessionsController < ApplicationController
       remember(@user)
       # Redirect to the user's original destination
       redirect_back_or @user
+    elsif
+      @user && !@user.authenticate(params[:session][:password])
+      flash.now[:error] = "❌ We didn't recognise that password. \
+                           If you've forgotten, you can #{view_context.link_to("reset it here", forgot_password_path)}".html_safe
+      render 'new'
     else
-      flash.now[:error] = '❌ Invalid email/password combination'
+      flash.now[:error] = "❌ We didn't recognise that email, sorry"
       render 'new'
     end
   end

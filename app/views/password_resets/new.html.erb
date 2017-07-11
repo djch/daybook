@@ -1,0 +1,13 @@
+<%= provide(:title, "Forgotten password") %>
+
+<h1 class="tc">Can't sign in?</h1>
+<p class="tc">We can email you a link to reset you your password</p>
+<div class="mw6 mv3 center pa3 pa4-ns bg-white br2">
+  <%= form_for(:password_reset, url: forgot_password_path) do |f| %>
+    <div class="mb3">
+      <%= f.label :email, "Enter your email address" %>
+      <%= f.email_field :email, class: "form-input", required: true, placeholder: "e.g. louise@example.com" %>
+    </div>
+    <%= f.submit "Email me reset instructions", class: "btn btn-block btn-primary" %>
+  <% end %>
+</div>
