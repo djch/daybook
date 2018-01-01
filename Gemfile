@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+ruby "~> 2.4"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
 gem 'rails', '~> 5.1'
@@ -42,18 +43,17 @@ group :development do
 end
 
 group :production do
-  gem "pg", "~> 0.20.0"
+  gem "pg", "~> 0.21.0"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# Rails engine for cache-friendly, client-side local time
-# TODO: Check if this pre-release version of local_time is merged yet
-gem "local_time", github: "basecamp/local_time", branch: "2-0"
-
-# Parse CSS and add vendor prefixes to CSS rules using values from the Can I Use
+# Autoprefix any CSS properties that need it
 gem "autoprefixer-rails", "~> 7"
+
+# Rails engine for cache-friendly, client-side local time
+gem "local_time", "~> 2.0"
 
 # Pagination library courtesy of Basecamp
 # https://github.com/basecamp/geared_pagination

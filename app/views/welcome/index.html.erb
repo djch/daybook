@@ -1,33 +1,19 @@
 <% provide(:title, "Welcome") %>
 
-<h1 class="f1 f-headline-ns lh-solid db mt3 ph4 tc">
-  Day Book
-</h1>
+<h1 class="mb4-l f3 f1-m f-headline-l">Day Book</h1>
 <div class="cf">
-  <header class="mw6 center ph4">
-    <p>Hi!</p>
+  <div class="measure">
     <p>
-      Looking for a writing app without any complications?
-      So am I. Nothing feels comfy or peaceful enough so I'm making my own thing.
+      A peaceful writing space with basic formatting tools and version control.
     </p>
     <p>
-      It's called Day Book but that might change.
-      It's very basic: you can write pieces, save them and edit them.
+      Write, get feedback, publish, archive.
     </p>
-    <p>Eventually I'll add some other features I could really use for my work:</p>
-    <ul>
-      <li>Printing to PDF</li>
-      <li>Versioning</li>
-      <li>Sharing + Publishing</li>
-      <li>Receiving feedback and revisions</li>
-    </ul>
-    Best,<br>
-    <%= mail_to 'dcharlesworth@me.com', 'Dan Charlesworth' %>
+    <div class="mt5 b">
+      Sound good?
+      <%= link_to 'Sign up and start writing', signup_path, class: "db" %>
+    </div>
   </header>
-  <div class="mw6 center mv4 pa3 bg-linen tc b br2">
-    Want to try it?
-    <%= link_to 'sign up for a free account', signup_path, class: "db grow" %>
-  </div>
 </div>
 
-<p class="mt5 tc gray">😊 Happy <%= local_time(Date.today, '%A') %>!</p>
+<p class="mt5 gray">😊 Happy <%= local_time(Date.today, '%A') %>!</p>
