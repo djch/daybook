@@ -5,17 +5,21 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', 'data-turbolinks-track': 'reload', media: 'all' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', 'defer': 'defer' %>
+    <%= javascript_pack_tag    'application', 'data-turbolinks-track': 'reload', 'defer': 'defer' %>
   </head>
   <body class="bg-offwhite">
     <%= render 'layouts/navbar' %>
+
     <% flash.each do |type, message| %>
       <div class="flash">
         <%= content_tag :div, message, class: "flash-content flash-content-#{type}" %>
       </div>
     <% end %>
+
     <div class="mw7 mb3 center pa3">
       <%= yield %>
     </div>
+
     <!-- <%= debug(params) if Rails.env.development? %> -->
   </body>
 </html>
