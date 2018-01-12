@@ -14,6 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require local-time
-//= require trix
+//= require trix/dist/trix
 
 //= require_tree .
