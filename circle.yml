@@ -3,3 +3,5 @@ machine:
     Australia/Hobart
   ruby:
     version: 2.4.1
+  node:
+    version: 9.4.0
