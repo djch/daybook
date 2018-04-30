@@ -2,7 +2,7 @@ source "https://rubygems.org"
 ruby "~> 2.4"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
-gem 'rails', '~> 5.1'
+gem 'rails', '~> 5.2'
 # Use Puma as the app server
 gem "puma", "~> 3.0"
 # Use SCSS for stylesheets
@@ -31,7 +31,7 @@ gem "bcrypt", "~> 3.1.11"
 group :development, :test do
   gem "sqlite3"
   gem "byebug", platform: :mri
-  gem 'capybara', '~> 2.13'
+  gem 'capybara', '~> 3'
   gem 'selenium-webdriver'
 end
 
@@ -43,14 +43,14 @@ group :development do
 end
 
 group :production do
-  gem "pg", "~> 0.21.0"
+  gem "pg", "~> 1.0"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Autoprefix any CSS properties that need it
-gem "autoprefixer-rails", "~> 7"
+gem "autoprefixer-rails", "~> 8"
 
 # Rails engine for cache-friendly, client-side local time
 gem "local_time", "~> 2.0"
