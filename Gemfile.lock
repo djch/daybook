@@ -84,7 +84,7 @@ GEM
     enumerable-statistics (2.0.1)
     erubi (1.9.0)
     execjs (2.7.0)
-    faker (2.11.0)
+    faker (2.12.0)
       i18n (>= 1.6, < 2)
     ffi (1.12.2)
     geared_pagination (0.2)
