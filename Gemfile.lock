@@ -68,7 +68,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.6)
+    concurrent-ruby (1.1.7)
     crass (1.0.6)
     derailed_benchmarks (1.7.0)
       benchmark-ips (~> 2)
@@ -84,7 +84,7 @@ GEM
     enumerable-statistics (2.0.1)
     erubi (1.9.0)
     execjs (2.7.0)
-    faker (2.11.0)
+    faker (2.14.0)
       i18n (>= 1.6, < 2)
     ffi (1.12.2)
     geared_pagination (0.2)
@@ -95,7 +95,7 @@ GEM
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     heapy (0.1.4)
-    i18n (1.8.2)
+    i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
