@@ -57,7 +57,7 @@ gem "local_time", "~> 2.0"
 
 # Pagination library courtesy of Basecamp
 # https://github.com/basecamp/geared_pagination
-gem "geared_pagination", "~> 0.2"
+gem "geared_pagination", "~> 1.0"
 
 # Fake data generator
 gem "faker", group: [:development, :test]
