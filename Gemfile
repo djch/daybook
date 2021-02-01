@@ -50,7 +50,7 @@ end
 # gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Autoprefix any CSS properties that need it
-gem "autoprefixer-rails", "~> 9"
+gem "autoprefixer-rails", "~> 10"
 
 # Rails engine for cache-friendly, client-side local time
 gem "local_time", "~> 2.0"
